@@ -10,7 +10,8 @@ internal class Program
         {
             case true:
                 origin.title = "Theodosius_III";
-                destination.title = "List_of_Byzantine_emperors";
+                //destination.title = "List_of_Byzantine_emperors"; // 1-Step
+                destination.title = "Anna_of_Savoy"; // 2-Step
                 break;
             case false:
                 Console.Write("Origin: ");
@@ -33,6 +34,27 @@ internal class Program
         if (origin.urlList.Contains(destination.url))
         {
             Console.WriteLine("Destination found in Origin");
+        }
+        else
+        {
+            for (int i = 0; i < origin.urlList.Count; i++)
+            {
+                Page node = new Page();
+                string fullUrl, titlePart;
+                
+                
+                fullUrl = origin.urlList[i];
+                titlePart = fullUrl.Replace("https://en.wikipedia.org/wiki/", "");
+                node.title = titlePart;
+
+                node.response = node.GetResponse(node.url);
+                node.urlList = node.ExtractURL();
+
+                if (node.urlList.Contains(destination.url))
+                {
+                    Console.WriteLine($"Found in node {i}");
+                }
+            }
         }
     }
 }
