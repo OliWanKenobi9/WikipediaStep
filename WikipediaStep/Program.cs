@@ -10,7 +10,6 @@ internal class Program
         {
             case true:
                 origin.title = "Theodosius_III";
-                //destination.title = "List_of_Byzantine_emperors"; // 1-Step
                 destination.title = "Sebastos"; // 2-Step
                 break;
             case false:
@@ -52,10 +51,11 @@ internal class Program
 
                 if (node.urlList.Contains(destination.url))
                 {
-                    Console.WriteLine($"Found in node {i}");
+                    Console.WriteLine($"Found in node {i} / {node.url}");
                     break;
                 }
             }
+            
         }
     }
 }

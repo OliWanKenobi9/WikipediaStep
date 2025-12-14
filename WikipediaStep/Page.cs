@@ -40,17 +40,46 @@ public class Page
             if (sub == "href=\"/wiki/")
             {
                 j = i + 12;
-                url = "https://en.wikipedia.org/wiki/";
+                url = "";
                 while (pageString[j] != 34)
                 {
                     url += pageString[j];
                     j++;
                 }
-                Console.WriteLine("Found URL: " + url);
-                response.Add(url);
+
+                if (IsValidArticleLink(url))
+                {
+                    string fullUrl = "https://en.wikipedia.org/wiki/" + url;
+                    Console.WriteLine("Found URL: " + fullUrl);
+                    response.Add(fullUrl);
+                }
             }
         }
-        
+    
         return response;
+    }
+
+    private bool IsValidArticleLink(string urlPath)
+    {
+        if (urlPath.Contains(":"))
+        {
+            string[] invalidPrefixes = {
+                "Wikipedia:", "Help:", "Special:", "Talk:",
+                "File:", "Template:", "Category:", "Portal:",
+                "MediaWiki:", "User:", "Module:"
+            };
+        
+            foreach (string prefix in invalidPrefixes)
+            {
+                if (urlPath.StartsWith(prefix))
+                    return false;
+            }
+        }
+        if (urlPath.StartsWith("#"))
+            return false;
+        if (urlPath == "Main_Page")
+            return false;
+    
+        return true;
     }
 }
