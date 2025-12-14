@@ -6,11 +6,11 @@ internal class Program
     {
         origin = new Page();
         destination = new Page();
-        switch (EnvironmetProperties.Debug)
+        switch (EnvironmentProperties.Debug)
         {
             case true:
                 origin.title = "Theodosius_III";
-                destination.title = "Sebastos"; // 2-Step
+                destination.title = "Sebastos";
                 break;
             case false:
                 Console.Write("Origin: ");
@@ -53,6 +53,10 @@ internal class Program
                 {
                     Console.WriteLine($"Found in node {i} / {node.url}");
                     break;
+                }
+                else
+                {
+                    // Create another node
                 }
             }
             
