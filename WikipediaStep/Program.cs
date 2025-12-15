@@ -21,6 +21,36 @@ internal class Program
                 break;
         }
     }
+
+    static int DepthSearch(Page previous, string destination) // Returns -1 for not found: Else depth where destination is found
+    {
+        int response = -1;
+        bool found = false;
+
+        Page[] node = new Page[previous.urlList.Count];
+
+        for (int i = 0; i < node.Length; i++)
+        {
+            node[i] = new Page();
+            node[i].GetResponse(previous.urlList[i]);
+            node[i].urlList = node[i].ExtractURL();
+
+            if (node[i].urlList.Contains(destination))
+                response = 1;
+            else continue;
+        }
+
+        if (!found)
+        {
+            for (int i = 0; i < node.Length; i++)
+            {
+                DepthSearch(node[i], destination);
+            }
+        }
+        
+        return response;
+    }
+    
     static void Main(string[] args)
     {
         Input(out Page origin, out Page destination);
@@ -36,30 +66,7 @@ internal class Program
         }
         else
         {
-            for (int i = 0; i < origin.urlList.Count; i++)
-            {
-                Page node = new Page();
-                string fullUrl, titlePart;
-                
-                
-                fullUrl = origin.urlList[i];
-                titlePart = fullUrl.Replace("https://en.wikipedia.org/wiki/", "");
-                node.title = titlePart;
-
-                node.response = node.GetResponse(node.url);
-                node.urlList = node.ExtractURL();
-
-                if (node.urlList.Contains(destination.url))
-                {
-                    Console.WriteLine($"Found in node {i} / {node.url}");
-                    break;
-                }
-                else
-                {
-                    // Create another node
-                }
-            }
-            
+            Console.WriteLine(DepthSearch(origin, destination.url));
         }
     }
 }
