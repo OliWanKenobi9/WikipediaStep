@@ -22,33 +22,44 @@ internal class Program
         }
     }
 
-    static int DepthSearch(Page previous, string destination) // Returns -1 for not found: Else depth where destination is found
+    static bool DepthSearch(Page previous, string destination) 
+        // Returns -1 for not found: Else, returns depth where destination is found
     {
-        // TODO: Int Depth to regulate iterations
-        int response = -1;
+        /*
+         * TODO: Int Depth to regulate iterations
+         */
         bool found = false;
+        int latest = 0;
 
         Page[] node = new Page[previous.urlList.Count];
 
         for (int i = 0; i < node.Length; i++)
-        {
+        { 
             node[i] = new Page();
             node[i].response = node[i].GetResponse(previous.urlList[i]);
             node[i].urlList = node[i].ExtractURL();
 
-            if (node[i].urlList.Contains(destination))
-                return 1;
+            if (node[i].urlList.Contains($"https://en.wikipedia.org/wiki/{destination}"))
+            {
+                latest = i;
+                found = true;
+            }
         }
 
         if (found == false)
         {
             for (int i = 0; i < node.Length; i++)
             {
+                Thread process = n
                 DepthSearch(node[i], destination);
             }
         }
+        else
+        {
+            Console.WriteLine($"{destination} found in node {node[latest].url}");
+        }
         
-        return response;
+        return found;
     }
     
     static void Main(string[] args)
