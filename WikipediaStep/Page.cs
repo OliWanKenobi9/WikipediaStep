@@ -16,12 +16,7 @@ public class Page
         HttpClient client = new HttpClient(); client.DefaultRequestHeaders.Add("User-Agent", "WikiPath/1.0 (Educational Project)");
         HttpResponseMessage response = new HttpResponseMessage();
         
-        Thread process = new Thread(() =>
-        {
-            response = client.GetAsync(url).Result;
-        });
-        process.Start();
-        process.Join();
+        response = client.GetAsync(url).Result;
         
         return response;
     }

@@ -24,6 +24,7 @@ internal class Program
 
     static int DepthSearch(Page previous, string destination) // Returns -1 for not found: Else depth where destination is found
     {
+        // TODO: Int Depth to regulate iterations
         int response = -1;
         bool found = false;
 
@@ -32,15 +33,14 @@ internal class Program
         for (int i = 0; i < node.Length; i++)
         {
             node[i] = new Page();
-            node[i].GetResponse(previous.urlList[i]);
+            node[i].response = node[i].GetResponse(previous.urlList[i]);
             node[i].urlList = node[i].ExtractURL();
 
             if (node[i].urlList.Contains(destination))
-                response = 1;
-            else continue;
+                return 1;
         }
 
-        if (!found)
+        if (found == false)
         {
             for (int i = 0; i < node.Length; i++)
             {
