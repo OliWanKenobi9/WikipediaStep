@@ -27,13 +27,35 @@ internal class Program
     {
         bool found = false;
         Page[] node = new Page[previous.urlList.Count];
+        string sub;
         
         for (int i = 0; i < previous.urlList.Count; i++)
         {
-            node[i].url = previous.urlList[i];
-            node[i].response = node[i].GetResponse();
+            sub = previous.urlList[i].Replace("https://en.wikipedia.org/wiki/", "");
+            node[i] = new Page();
+            node[i].title = sub;
+            node[i].response = node[i].GetResponse(node[i].url);
+            node[i].urlList = node[i].ExtractURL();
+
+            if (node[i].urlList.Contains(destination))
+                found = true;
         }
-        
+
+        if (found == false)
+        {
+            if (depth == -1)
+            {
+                for (int i = 0; i < node.Length; i++)
+                {
+                    DepthSearch(node[i], destination, 1);
+                }
+            }
+        }
+        else
+        {
+            Console.WriteLine("Found destination");
+            Environment.Exit(0);
+        }
         return found;
     }
     
