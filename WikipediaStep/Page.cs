@@ -2,11 +2,8 @@ namespace WikipediaStep;
 
 public class Page
 {
-    // Attributes
-    public string title { get; set; }
-
     // Constructors
-    public string url => $"https://en.wikipedia.org/wiki/{title}";
+    public string url {get; set;}
     public List<string> urlList = new List<string>();
     public HttpResponseMessage response;
     

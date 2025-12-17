@@ -9,15 +9,16 @@ internal class Program
         switch (EnvironmentProperties.Debug)
         {
             case true:
-                origin.title = "Theodosius_III";
-                destination.title = "Sebastos";
+                origin.url = "https://en.wikipedia.org/wiki/Theodosius_III";
+                //destination.title = "Sebastos";
+                destination.url = "https://en.wikipedia.org/wiki/List_of_Byzantine_emperors";
                 break;
             case false:
                 Console.Write("Origin: ");
-                origin.title = Console.ReadLine();
+                origin.url = "https://en.wikipedia.org/wiki/" + Console.ReadLine();
                 
                 Console.Write("Destination: ");
-                destination.title = Console.ReadLine();
+                destination.url = "https://en.wikipedia.org/wiki/" + Console.ReadLine();
                 break;
         }
     }
@@ -26,28 +27,30 @@ internal class Program
         // Parameter depth: Value -1 means no regulation
     {
         bool found = false;
-        Page[] node = new Page[previous.urlList.Count];
+        List<Page> nodes = new List<Page>();
         string sub;
         
         for (int i = 0; i < previous.urlList.Count; i++)
         {
-            sub = previous.urlList[i].Replace("https://en.wikipedia.org/wiki/", "");
-            node[i] = new Page();
-            node[i].title = sub;
-            node[i].response = node[i].GetResponse(node[i].url);
-            node[i].urlList = node[i].ExtractURL();
-
-            if (node[i].urlList.Contains(destination))
+            Page node = new Page();
+            node.url = previous.urlList[i];
+            node.response = node.GetResponse(node.url);
+            node.urlList = node.ExtractURL();
+            
+            if (node.urlList.Contains(destination))
+            {
                 found = true;
+            }
+            nodes.Add(node);
         }
 
         if (found == false)
         {
             if (depth == -1)
             {
-                for (int i = 0; i < node.Length; i++)
+                for (int i = 0; i < nodes.Count; i++)
                 {
-                    DepthSearch(node[i], destination, 1);
+                    found = DepthSearch(nodes[i], destination, 1);
                 }
             }
         }
@@ -68,13 +71,15 @@ internal class Program
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
 
-        if (origin.urlList.Contains(destination.url))
+        Console.WriteLine(DepthSearch(origin, destination.url));
+        
+        /*if (origin.urlList.Contains(destination.url))
         {
             Console.WriteLine("Destination found in Origin");
         }
         else
         {
             Console.WriteLine(DepthSearch(origin, destination.url));
-        }
+        }*/
     }
 }
