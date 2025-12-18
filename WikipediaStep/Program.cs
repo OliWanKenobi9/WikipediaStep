@@ -24,7 +24,7 @@ internal class Program
     }
 
     static bool DepthSearch(Page previous, string destination, int depth = -1) 
-        // Parameter depth: Value -1 means no regulation
+            // Parameter depth: Value -1 means no regulation
     {
         bool found = false;
         List<Page> nodes = new List<Page>();
