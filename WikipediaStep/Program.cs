@@ -25,6 +25,9 @@ internal class Program
     static void Main(string[] args)
     {
         Input(out Page origin, out Page destination);
+        Nodes testnodes = new Nodes();
+        // Declaration
+        
         origin.response = origin.GetResponse(origin.url);
         origin.urlList = origin.ExtractURL();
 
