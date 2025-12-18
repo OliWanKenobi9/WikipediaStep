@@ -33,16 +33,5 @@ internal class Program
 
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
-        
-        testnodes.Worker(origin);
-        for (int i = 0; i < testnodes.node.Length; i++)
-        {
-            if (testnodes.node[i].urlList.Contains(destination.url))
-            {
-                Console.WriteLine("Found");
-                break;
-            }
-        }
-        Console.WriteLine("End");
     }
 }
