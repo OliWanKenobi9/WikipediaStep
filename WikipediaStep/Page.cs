@@ -17,7 +17,6 @@ public class Page
         
         return response;
     }
-
     public List<string> ExtractURL()
     {
         List<string> response = new List<string>();
@@ -50,7 +49,6 @@ public class Page
     
         return response;
     }
-
     private bool IsValidArticleLink(string urlPath)
     {
         if (urlPath.Contains(":"))
