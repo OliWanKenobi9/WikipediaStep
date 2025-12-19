@@ -52,8 +52,6 @@ internal class Program
     static void Main(string[] args)
     {
         /*
-         * TODO: Fix    ORIGIN-> NODE -> DESTINATION path to
-         *              ORIGIN-> NODE * x -> DESTINATION
          * TODO: If destination hasnt been found in node layer 1, open additional layers
          * TODO: Custom List.Contains method
          */
