@@ -14,6 +14,7 @@ public class Nodes
             node[i].url = origin.urlList[i];
             node[i].response = node[i].GetResponse(node[i].url);
             node[i].urlList = node[i].ExtractURL();
+            Console.WriteLine($"Done with node {i}");
         }
     }
 }

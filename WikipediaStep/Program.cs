@@ -35,5 +35,23 @@ internal class Program
         destination.urlList = destination.ExtractURL();
         
         testnodes.Worker(origin);
+        new Thread(() =>
+        {
+            // Check if testnodes[i] contains destination.url
+            // If i == testnodes.Length
+            //          i = 0
+
+            for (int i = 0; i < testnodes.node.Count; i++)
+            {
+                if (i == testnodes.node.Count)
+                    i = 0;
+
+                if (testnodes.node[i].urlList.Contains(destination.url))
+                {
+                    Console.WriteLine($"Destination found in node {i}");
+                    Environment.Exit(0);
+                }
+            }
+        }).Start();
     }
 }
