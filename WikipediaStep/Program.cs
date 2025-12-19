@@ -27,7 +27,6 @@ internal class Program
         // Check if nodes[i] contains destination.url
         // If i == nodes.Length
         //          i = 0
-
         bool found = false;
         int j = 0;
         while (found == false)
@@ -38,6 +37,7 @@ internal class Program
                 {
                     Console.WriteLine($"Done searching node {i}: {nodes.node[i].url}");
                     Console.WriteLine($"Destination found in node {i}: {nodes.node[i].url}");
+                    found = true;
                     Environment.Exit(0);
                 }
 
@@ -51,10 +51,6 @@ internal class Program
     
     static void Main(string[] args)
     {
-        /*
-         * TODO: If destination hasnt been found in node layer 1, open additional layers
-         * TODO: Custom List.Contains method
-         */
         Input(out Page origin, out Page destination);
         Nodes nodes = new Nodes(); nodes.origin = origin;
         // Declaration
