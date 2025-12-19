@@ -55,9 +55,10 @@ internal class Program
          * TODO: Fix    ORIGIN-> NODE -> DESTINATION path to
          *              ORIGIN-> NODE * x -> DESTINATION
          * TODO: If destination hasnt been found in node layer 1, open additional layers
+         * TODO: Custom List.Contains method
          */
         Input(out Page origin, out Page destination);
-        Nodes nodes = new Nodes();
+        Nodes nodes = new Nodes(); nodes.origin = origin;
         // Declaration
         
         origin.response = origin.GetResponse(origin.url);
@@ -68,14 +69,25 @@ internal class Program
 
         if (origin.urlList.Contains(destination.url))
         {
-            Console.WriteLine($"Destination found in origin");
+            Console.WriteLine($"Destination found in Origin");
         }
         else
         {
             Thread process = new Thread(() => NodeSearch(destination.url, nodes, 60));
             process.Start();
-        
+            
             nodes.Worker(origin);
+
+            if (process.IsAlive == false)
+            {
+                Console.WriteLine("Starting 2nd Layer");
+                for (int i = 0; i < nodes.node.Count; i++)
+                {
+                    Console.WriteLine($"Initializing Subnode {i}: {nodes.node[i].url}");
+                    Nodes subnodes = new Nodes(); subnodes.origin = nodes.node[i];
+                    Thread subprocess = new Thread(() => NodeSearch(destination.url, subnodes, 60));
+                }
+            }
         }
     }
 }
