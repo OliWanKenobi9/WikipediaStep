@@ -22,7 +22,7 @@ internal class Program
         }
     }
 
-    static void NodeSearch(string destination, Nodes nodes)
+    static void NodeSearch(string destination, Nodes nodes, int persecond)
     {
         // Check if testnodes[i] contains destination.url
         // If i == testnodes.Length
@@ -45,6 +45,7 @@ internal class Program
             }
             Console.WriteLine($"Done searching nodes {j}");
             j++;
+            Thread.Sleep(1000/persecond);
         }
     }
     
@@ -64,7 +65,7 @@ internal class Program
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
         
-        Thread process = new Thread(() => NodeSearch(destination.url, nodes));
+        Thread process = new Thread(() => NodeSearch(destination.url, nodes, 60));
         process.Start();
         
         nodes.Worker(origin);
