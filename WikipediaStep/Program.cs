@@ -33,5 +33,7 @@ internal class Program
 
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
+        
+        testnodes.Worker(origin);
     }
 }
