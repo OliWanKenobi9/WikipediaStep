@@ -9,8 +9,8 @@ internal class Program
         switch (EnvironmentProperties.Debug)
         {
             case true:
-                origin.url = "https://en.wikipedia.org/wiki/Theodosius_III";
-                destination.url = "https://en.wikipedia.org/wiki/Sebastos";
+                origin.url = "https://en.wikipedia.org/wiki/Saint_Catherine%27s_Monastery";
+                destination.url = "https://en.wikipedia.org/wiki/Modular_arithmetic";
                 break;
             case false:
                 Console.Write("Origin: ");
@@ -68,6 +68,7 @@ internal class Program
         if (origin.urlList.Contains(destination.url))
         {
             Console.WriteLine($"Destination found in Origin");
+            Environment.Exit(0);
         }
         else
         {
@@ -75,17 +76,6 @@ internal class Program
             process.Start();
             
             nodes.Worker(origin);
-
-            if (process.IsAlive == false)
-            {
-                Console.WriteLine("Starting 2nd Layer");
-                for (int i = 0; i < nodes.node.Count; i++)
-                {
-                    Console.WriteLine($"Initializing Subnode {i}: {nodes.node[i].url}");
-                    Nodes subnodes = new Nodes(); subnodes.origin = nodes.node[i];
-                    Thread subprocess = new Thread(() => NodeSearch(destination.url, subnodes, 60));
-                }
-            }
         }
     }
 }

@@ -6,11 +6,26 @@ public class Page
     public string url {get; set;}
     public List<string> urlList = new List<string>();
     public HttpResponseMessage response;
+    private HttpClient client = new HttpClient();
+
+    public List<string> RemoveDuplicates(List<string> origin)
+    {
+        List<string> response = new List<string>();
+        
+        for (int i = 0; i < origin.Count; i++)
+        {
+            if (!response.Contains(origin[i]))
+                response.Add(origin[i]);
+        }
+
+        return response;
+    }
     
     // Methods
     public HttpResponseMessage GetResponse(string url)
     {
-        HttpClient client = new HttpClient(); client.DefaultRequestHeaders.Add("User-Agent", "WikiPath/1.0 (Educational Project)");
+       
+         client.DefaultRequestHeaders.Add("User-Agent", "WikiPath/1.0 (Educational Project)");
         HttpResponseMessage response = new HttpResponseMessage();
         
         response = client.GetAsync(url).Result;
@@ -46,8 +61,8 @@ public class Page
                 }
             }
         }
-    
-        return response;
+
+        return RemoveDuplicates(response);
     }
     private bool IsValidArticleLink(string urlPath)
     {
