@@ -24,8 +24,8 @@ internal class Program
 
     static void NodeSearch(string destination, Nodes nodes, int persecond)
     {
-        // Check if testnodes[i] contains destination.url
-        // If i == testnodes.Length
+        // Check if nodes[i] contains destination.url
+        // If i == nodes.Length
         //          i = 0
 
         bool found = false;
@@ -52,8 +52,9 @@ internal class Program
     static void Main(string[] args)
     {
         /*
-         * TODO: Fix    ORIGIN-> NODE ->DESTINATION path to
+         * TODO: Fix    ORIGIN-> NODE -> DESTINATION path to
          *              ORIGIN-> NODE * x -> DESTINATION
+         * TODO: If destination hasnt been found in node layer 1, open additional layers
          */
         Input(out Page origin, out Page destination);
         Nodes nodes = new Nodes();
@@ -64,10 +65,17 @@ internal class Program
         
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
+
+        if (origin.urlList.Contains(destination.url))
+        {
+            Console.WriteLine($"Destination found in origin");
+        }
+        else
+        {
+            Thread process = new Thread(() => NodeSearch(destination.url, nodes, 60));
+            process.Start();
         
-        Thread process = new Thread(() => NodeSearch(destination.url, nodes, 60));
-        process.Start();
-        
-        nodes.Worker(origin);
+            nodes.Worker(origin);
+        }
     }
 }
