@@ -54,7 +54,7 @@ internal class Program
         }
     }
     
-    [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String; size: 2692MB")]
+    
     static void Main(string[] args)
     {
         ExtractURL();
