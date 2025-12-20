@@ -1,13 +1,12 @@
-//
-// Created by Oliver Hitz on 20.12.25.
-//
-
 #ifndef WIKIPEDIASTEP_DEPS_JSON_PAGEPARSER_H
 #define WIKIPEDIASTEP_DEPS_JSON_PAGEPARSER_H
 
+using namespace std;
 
 class Pageparser
 {
+public:
+    void TestFunction();
 };
 
 

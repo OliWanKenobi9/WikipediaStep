@@ -1,5 +1,3 @@
-//
-// Created by Oliver Hitz on 20.12.25.
-//
+#include "../include/Pageparser.h"
 
-#include "Pageparser.h"
+using namespace std;
