@@ -16,7 +16,9 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="WikiLib" targetName="WikiLib" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
@@ -24,12 +26,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WikiLib/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WikiLib/include/pageparser.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WikiLib/src/pageparser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="c++ files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiLib/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiLib/include/pageparser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiLib/src/pageparser.h" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/include/pageparser.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -61,6 +63,10 @@
     &quot;accountId&quot;: &quot;c2af52fd-5746-4bb5-a2fd-a8562abc4d0a&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/WikiLib/include/pageparser.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WikiLib/src/pageparser.cpp" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
     <option name="majorVersion" value="2025" />
@@ -99,6 +105,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WikiLib/include" />
+      <recent name="$PROJECT_DIR$/WikiLib/src" />
       <recent name="$PROJECT_DIR$/WikiLib" />
     </key>
   </component>
@@ -106,6 +114,11 @@
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WikiLib" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WikiLib" TARGET_NAME="WikiLib" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -126,8 +139,17 @@
       <workItem from="1766170829298" duration="44000" />
       <workItem from="1766170880828" duration="41000" />
       <workItem from="1766236716374" duration="104000" />
-      <workItem from="1766238247733" duration="452000" />
+      <workItem from="1766238247733" duration="2044000" />
     </task>
+    <task id="LOCAL-00001" summary="c++ files">
+      <option name="closed" value="true" />
+      <created>1766238850927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1766238850927</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +159,21 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="c++ files" />
+    <option name="LAST_COMMIT_MESSAGE" value="c++ files" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
