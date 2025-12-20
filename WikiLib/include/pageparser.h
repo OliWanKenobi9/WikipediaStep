@@ -1,4 +1,14 @@
-#ifndef WIKIPEDIASTEP_DEPS_JSON_PAGEPARSER_H
-#define WIKIPEDIASTEP_DEPS_JSON_PAGEPARSER_H
+#ifndef PAGEPARSER_H
+#define PAGEPARSER_H
 
-#endif //WIKIPEDIASTEP_DEPS_JSON_PAGEPARSER_H
+#ifdef _WIN32
+    #define EXPORT __declspec(dllexport)
+#else
+    #define EXPORT __attribute__((visibility("default")))
+#endif
+
+extern "C" {
+    EXPORT void SayHello();
+}
+
+#endif // PAGEPARSER_H
