@@ -61,43 +61,21 @@ internal class Program
         Input(out Page origin, out Page destination);
         Nodes nodes = new Nodes(); nodes.origin = origin;
         // Declaration
+        
         origin.response = origin.GetResponse(origin.url);
         origin.urlList = origin.ExtractURL();
         
-        
-        
-        #region ExtractURL Testing
-        
-        IntPtr extr = ExtractURL(origin.response.Content.ReadAsStringAsync().Result);
+        #region Testing
 
-        List<string> urlList = new List<string>();
-
-        if (extr != IntPtr.Zero)
+        List<string> testlist = new List<string>();
+        testlist = origin.ExtractURL();
+        for (int i = 0; i < testlist.Count; i++)
         {
-            int i = 0;
-            while (true)
-            {
-                // Read the pointer at position i
-                IntPtr strPtr = Marshal.ReadIntPtr(extr, i * IntPtr.Size);
-        
-                // Check for NULL terminator
-                if (strPtr == IntPtr.Zero)
-                    break;
-        
-                // Convert the C string to C# string
-                string url = Marshal.PtrToStringAnsi(strPtr);
-                urlList.Add(url);
-        
-                i++;
-            }
+            Console.WriteLine(testlist[i]);
         }
-        
-        Console.WriteLine($"Found {urlList.Count} URLs");
-        
-        Console.ReadKey();
+
+        return;
         #endregion
-        
-        
         
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();

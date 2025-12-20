@@ -17,35 +17,30 @@ extern "C" {
         size_t length = page.length(), h;
         char** result;
 
-        int i, j, count;;
+        int i, j;
 
         for (i = 0; i < length-12; i++) {
             sub = page.substr(i, 12);
-
             if (sub == "href=\"/wiki/") {
                 j = i+12;
                 url = "";
 
-                while (page[j] != 34) { // 34 == "
+                while (page[j] != 34 && j < length) {
                     url += page[j];
                     j++;
                 }
 
-                urls[count] = url;
-
-                count++;
+                urls.push_back(url);
             }
-
-            result = new char*[urls.size() + 1];
-
-            for (h = 0; h < urls.size(); h++) {
-                result[h] = new char[urls[h].length() + 1];  // +1 for null terminator
-                strcpy(result[h], urls[h].c_str());
-            }
-
-            result[urls.size()] = nullptr;
-
-            return result;
         }
+
+        result = (char**)malloc((urls.size() + 1) * sizeof(char*));
+        for (h = 0; h < urls.size(); h++) {
+            result[h] = (char*)malloc(urls[h].length() + 1);
+            strcpy(result[h], urls[h].c_str());
+        }
+
+        result[urls.size()] = nullptr;
+        return result;
     }
 }
