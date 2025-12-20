@@ -37,7 +37,7 @@ public class Page
         List<string> response = new List<string>();
         string pageString = this.response.Content.ReadAsStringAsync().Result;
         string sub, url;
-        int i = 0, j;
+        int i, j;
 
         // Search for: href="/wiki/
         for (i = 0; i < pageString.Length-12; i++)
