@@ -6,7 +6,7 @@ namespace WikipediaStep;
 
 internal class Program
 {
-    [DllImport("WikiLib", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("libWikiLib.dylib", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SayHello();
     
     static void Input(out Page origin, out Page destination)
