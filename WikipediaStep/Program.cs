@@ -1,10 +1,14 @@
-﻿using System.Diagnostics;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 namespace WikipediaStep;
 
 internal class Program
 {
+    [DllImport("WikiLib", CallingConvention = CallingConvention.Cdecl)]
+    private static extern void SayHello();
+    
     static void Input(out Page origin, out Page destination)
     {
         origin = new Page();
@@ -52,6 +56,11 @@ internal class Program
     [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String; size: 2692MB")]
     static void Main(string[] args)
     {
+        Console.WriteLine("Calling C++ function...");
+        SayHello();
+        Console.WriteLine("Done!");
+        
+        
         Input(out Page origin, out Page destination);
         Nodes nodes = new Nodes(); nodes.origin = origin;
         // Declaration

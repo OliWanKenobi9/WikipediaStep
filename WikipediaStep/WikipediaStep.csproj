@@ -7,4 +7,11 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <!-- Copy the C++ library to output directory -->
+    <ItemGroup>
+        <None Include="../WikiLib/cmake-build-debug/bin/libWikiLib.dylib"
+              CopyToOutputDirectory="PreserveNewest"
+              Link="libWikiLib.dylib" />
+    </ItemGroup>
+
 </Project>
