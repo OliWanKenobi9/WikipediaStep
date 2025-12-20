@@ -9,9 +9,10 @@
 
     <!-- Copy the C++ library to output directory -->
     <ItemGroup>
-        <None Include="../WikiLib/cmake-build-debug/bin/libWikiLib.dylib"
+        <None Include="$(MSBuildProjectDirectory)/../WikiLib/cmake-build-debug/bin/libWikiLib.dylib"
               CopyToOutputDirectory="PreserveNewest"
-              Link="libWikiLib.dylib" />
+              Link="libWikiLib.dylib"
+              Visible="false" />
     </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ namespace WikipediaStep;
 
 internal class Program
 {
+
     [DllImport("libWikiLib.dylib", CallingConvention = CallingConvention.Cdecl)]
     private static extern void SayHello();
     
@@ -56,9 +57,6 @@ internal class Program
     [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String; size: 2692MB")]
     static void Main(string[] args)
     {
-        Console.WriteLine("Calling C++ function...");
-        SayHello();
-        Console.WriteLine("Done!");
         
         
         Input(out Page origin, out Page destination);
