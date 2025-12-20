@@ -8,7 +8,7 @@ internal class Program
 {
 
     [DllImport("libWikiLib.dylib", CallingConvention = CallingConvention.Cdecl)]
-    private static extern void ExtractURL();
+    private static extern IntPtr ExtractURL(string pageIn);
     
     static void Input(out Page origin, out Page destination)
     {
@@ -57,13 +57,31 @@ internal class Program
     
     static void Main(string[] args)
     {
-        ExtractURL();
+        
         Input(out Page origin, out Page destination);
         Nodes nodes = new Nodes(); nodes.origin = origin;
         // Declaration
-        
         origin.response = origin.GetResponse(origin.url);
         origin.urlList = origin.ExtractURL();
+        
+        
+        
+        #region ExtractURL Testing
+        List<string> urlList = new List<string>();
+        IntPtr extr = ExtractURL(origin.response.Content.ReadAsStringAsync().Result);
+
+        for (int i = 0; i < 2; i++)
+        {
+            if (extr != IntPtr.Zero)
+            {
+                
+            }
+        }
+        
+        Console.ReadKey();
+        #endregion
+        
+        
         
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
