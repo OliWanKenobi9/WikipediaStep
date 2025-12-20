@@ -67,16 +67,32 @@ internal class Program
         
         
         #region ExtractURL Testing
-        List<string> urlList = new List<string>();
+        
         IntPtr extr = ExtractURL(origin.response.Content.ReadAsStringAsync().Result);
 
-        for (int i = 0; i < 2; i++)
+        List<string> urlList = new List<string>();
+
+        if (extr != IntPtr.Zero)
         {
-            if (extr != IntPtr.Zero)
+            int i = 0;
+            while (true)
             {
-                
+                // Read the pointer at position i
+                IntPtr strPtr = Marshal.ReadIntPtr(extr, i * IntPtr.Size);
+        
+                // Check for NULL terminator
+                if (strPtr == IntPtr.Zero)
+                    break;
+        
+                // Convert the C string to C# string
+                string url = Marshal.PtrToStringAnsi(strPtr);
+                urlList.Add(url);
+        
+                i++;
             }
         }
+        
+        Console.WriteLine($"Found {urlList.Count} URLs");
         
         Console.ReadKey();
         #endregion
