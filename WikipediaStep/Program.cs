@@ -1,4 +1,7 @@
-﻿namespace WikipediaStep;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+
+namespace WikipediaStep;
 
 internal class Program
 {
@@ -24,9 +27,6 @@ internal class Program
 
     static void NodeSearch(string destination, Nodes nodes, int persecond)
     {
-        // Check if nodes[i] contains destination.url
-        // If i == nodes.Length
-        //          i = 0
         bool found = false;
         int j = 0;
         while (found == false)
@@ -49,6 +49,7 @@ internal class Program
         }
     }
     
+    [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String; size: 2692MB")]
     static void Main(string[] args)
     {
         Input(out Page origin, out Page destination);
