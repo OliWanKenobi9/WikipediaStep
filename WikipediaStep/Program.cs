@@ -57,8 +57,6 @@ internal class Program
     [SuppressMessage("ReSharper.DPA", "DPA0002: Excessive memory allocations in SOH", MessageId = "type: System.String; size: 2692MB")]
     static void Main(string[] args)
     {
-        
-        
         Input(out Page origin, out Page destination);
         Nodes nodes = new Nodes(); nodes.origin = origin;
         // Declaration

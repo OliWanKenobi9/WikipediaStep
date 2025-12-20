@@ -26,10 +26,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="fix CMakeLists.txt">
+    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiLib/include/pageparser.h" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/include/pageparser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WikipediaStep/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WikipediaStep/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WikipediaStep/WikipediaStep.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WikipediaStep/WikipediaStep.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +139,7 @@
       <workItem from="1766170829298" duration="44000" />
       <workItem from="1766170880828" duration="41000" />
       <workItem from="1766236716374" duration="104000" />
-      <workItem from="1766238247733" duration="3502000" />
+      <workItem from="1766238247733" duration="4314000" />
     </task>
     <task id="LOCAL-00001" summary="c++ files">
       <option name="closed" value="true" />
@@ -180,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766241108766</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1766241777878</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1766241777878</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +216,8 @@
     <MESSAGE value="fix CMakeLists.txt, build, CMake Install" />
     <MESSAGE value="modify csproj" />
     <MESSAGE value="fix CMakeLists.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix CMakeLists.txt" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

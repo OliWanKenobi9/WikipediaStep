@@ -9,6 +9,7 @@
 
 extern "C" {
     EXPORT void SayHello();
+    EXPORT void ExtractURL();
 }
 
 #endif // PAGEPARSER_H
