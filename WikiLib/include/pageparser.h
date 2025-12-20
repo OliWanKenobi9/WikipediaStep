@@ -8,7 +8,6 @@
 #endif
 
 extern "C" {
-    EXPORT void SayHello();
     EXPORT void ExtractURL();
 }
 

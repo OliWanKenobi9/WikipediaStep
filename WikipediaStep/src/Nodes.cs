@@ -7,7 +7,6 @@ public class Nodes
 
     public void Worker(Page origin)
     {
-        Page current;
         for (int i = 0; i < origin.urlList.Count; i++)
         {
             node.Add(new Page());
