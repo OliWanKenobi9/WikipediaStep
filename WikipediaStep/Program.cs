@@ -65,18 +65,6 @@ internal class Program
         origin.response = origin.GetResponse(origin.url);
         origin.urlList = origin.ExtractURL();
         
-        #region Testing
-
-        List<string> testlist = new List<string>();
-        testlist = origin.ExtractURL();
-        for (int i = 0; i < testlist.Count; i++)
-        {
-            Console.WriteLine(testlist[i]);
-        }
-
-        return;
-        #endregion
-        
         destination.response = destination.GetResponse(destination.url);
         destination.urlList = destination.ExtractURL();
 

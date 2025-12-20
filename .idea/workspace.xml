@@ -28,7 +28,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="ExtractURL Function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WikipediaStep.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/WikipediaStep.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WikipediaStep/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WikipediaStep/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WikipediaStep/src/Page.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WikipediaStep/src/Page.cs" afterDir="false" />
@@ -147,7 +146,7 @@
       <workItem from="1766170880828" duration="41000" />
       <workItem from="1766236716374" duration="104000" />
       <workItem from="1766238247733" duration="6078000" />
-      <workItem from="1766245801921" duration="5531000" />
+      <workItem from="1766245801921" duration="6385000" />
     </task>
     <task id="LOCAL-00001" summary="c++ files">
       <option name="closed" value="true" />

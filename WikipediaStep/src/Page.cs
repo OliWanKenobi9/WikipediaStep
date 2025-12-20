@@ -53,14 +53,21 @@ public class Page
         {
             Marshal.FreeHGlobal(stringPtr); // Free Memory
             stringPtr = Marshal.ReadIntPtr(initResponse, i * IntPtr.Size);
-            url = Marshal.PtrToStringAnsi(stringPtr);
+            url = $"https://en.wikipedia.org/wiki/{Marshal.PtrToStringAnsi(stringPtr)}";
+
+
+            if (url != null)
+            {
+                if (IsValidArticleLink(url))
+                    response.Add(url);
+            }
             
-            response.Add(url);
             i++;
         } while (stringPtr != IntPtr.Zero);
 
         
         Marshal.FreeHGlobal(initResponse); // Free Memory
+        response = RemoveDuplicates(response);
         return response;
     }
     private bool IsValidArticleLink(string urlPath)
