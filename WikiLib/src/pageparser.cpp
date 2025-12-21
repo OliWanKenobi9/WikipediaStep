@@ -6,13 +6,9 @@
 using namespace std;
 
 static bool IsValidArticleLink(const string url) {
-    /*  Forbidden Prefixes:
-        "Wikipedia:", "Help:", "Special:", "Talk:",
-        "File:", "Template:", "Category:", "Portal:",
-        "MediaWiki:", "User:", "Module:"
-    */
     int length = url.length();
 
+    // User:, File:, Help:, Talk: (colon at index 4)
     if ((url[0] == 'U' || url[0] == 'F' || url[0] == 'H' || url[0] == 'T') && length > 4) {
         if (url[4] == ':')
             return false;
@@ -23,7 +19,17 @@ static bool IsValidArticleLink(const string url) {
             return false;
     }
 
-    if ((url[0] == 'S' || url[0] == 'T' || url[0] == 'C') && length > 8) {
+    if (url[0] == 'S' && length > 7) {
+        if (url[7] == ':')
+            return false;
+    }
+
+    if (url[0] == 'T' && length > 8) {
+        if (url[8] == ':')
+            return false;
+    }
+
+    if (url[0] == 'C' && length > 8) {
         if (url[8] == ':')
             return false;
     }
@@ -33,7 +39,7 @@ static bool IsValidArticleLink(const string url) {
             return false;
     }
 
-    if (url[0] == 'W' && length > 10) {
+    if (url[0] == 'W' && length > 9) {
         if (url[9] == ':')
             return false;
     }

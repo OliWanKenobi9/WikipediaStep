@@ -58,8 +58,7 @@ public class Page
 
             if (url != null)
             {
-                if (IsValidArticleLink(url))
-                    response.Add(url);
+                response.Add(url);
             }
             
             i++;
@@ -67,30 +66,6 @@ public class Page
 
         
         Marshal.FreeHGlobal(initResponse); // Free Memory
-        response = RemoveDuplicates(response);
         return response;
-    }
-    private bool IsValidArticleLink(string urlPath)
-    {
-        if (urlPath.Contains(":"))
-        {
-            string[] invalidPrefixes = {
-                "Wikipedia:", "Help:", "Special:", "Talk:",
-                "File:", "Template:", "Category:", "Portal:",
-                "MediaWiki:", "User:", "Module:"
-            };
-        
-            foreach (string prefix in invalidPrefixes)
-            {
-                if (urlPath.StartsWith(prefix))
-                    return false;
-            }
-        }
-        if (urlPath.StartsWith("#"))
-            return false;
-        if (urlPath == "Main_Page")
-            return false;
-    
-        return true;
     }
 }
