@@ -10,7 +10,6 @@ extern "C" {
         /*
          * TODO: Add Validation Check
          * TODO: Add RemoveDuplicates
-         * TODO: Remove FullURL:
          */
         vector<string> urls;
         string page(pageIn), sub, url;

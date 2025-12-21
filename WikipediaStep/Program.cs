@@ -33,10 +33,13 @@ internal class Program
     static void NodeSearch(string destination, Nodes nodes, int persecond)
     {
         bool found = false;
-        int j = 0;
+        int lastCheckedIndex = 0;
+    
         while (found == false)
         {
-            for (int i = 0; i < nodes.node.Count; i++)
+            int currentCount = nodes.node.Count;
+            
+            for (int i = lastCheckedIndex; i < currentCount; i++)
             {
                 if (nodes.node[i].urlList.Contains(destination))
                 {
@@ -48,8 +51,9 @@ internal class Program
 
                 Console.WriteLine($"Done searching node {i}: {nodes.node[i].url}");
             }
-            Console.WriteLine($"Done searching nodes {j}");
-            j++;
+        
+            lastCheckedIndex = currentCount;
+        
             Thread.Sleep(1000/persecond);
         }
     }

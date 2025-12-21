@@ -16,7 +16,7 @@ public class Page
         
         for (int i = 0; i < origin.Count; i++)
         {
-            if (!response.Contains(origin[i]))
+            if (response.Contains(origin[i]) == false)
                 response.Add(origin[i]);
         }
 
@@ -26,7 +26,7 @@ public class Page
     // Methods
     public HttpResponseMessage GetResponse(string url)
     {
-         client.DefaultRequestHeaders.Add("User-Agent", "WikiPath/1.0 (Educational Project)");
+        client.DefaultRequestHeaders.Add("User-Agent", "WikiPath/1.0 (Educational Project)");
         HttpResponseMessage response = new HttpResponseMessage();
         
         response = client.GetAsync(url).Result;
