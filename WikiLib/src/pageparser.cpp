@@ -47,10 +47,28 @@ static bool IsValidArticleLink(const string url) {
     return true;
 }
 
+static vector<string> RemoveDuplicates(vector<string> url) {
+    vector<string> uniqueurls;
+    bool found;
+
+    for (int i = 0; i < url.size(); i++) {
+        found = false;
+
+        for (int j = 0; j < url.size(); j++) {
+            for (int h = 0; h < uniqueurls.size(); h++) {
+                if (url[j] == uniqueurls[h])
+                    found = true;
+            }
+        }
+
+        if (found == false)
+            uniqueurls.push_back(url[i]);
+    }
+}
+
 extern "C" {
     EXPORT char** ExtractURL(const char* pageIn) {
         /*
-         * TODO: Add Validation Check
          * TODO: Add RemoveDuplicates
          */
         vector<string> urls;

@@ -56,7 +56,7 @@ public class Page
             url = $"https://en.wikipedia.org/wiki/{Marshal.PtrToStringAnsi(stringPtr)}";
 
 
-            if (url != null)
+            if (url != null) 
             {
                 response.Add(url);
             }
