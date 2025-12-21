@@ -26,7 +26,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="ExtractURL Function">
+    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="IsValidArticleLink">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" afterDir="false" />
     </list>
@@ -140,7 +140,9 @@
       <workItem from="1766236716374" duration="104000" />
       <workItem from="1766238247733" duration="6078000" />
       <workItem from="1766245801921" duration="7735000" />
-      <workItem from="1766306290699" duration="1469000" />
+      <workItem from="1766306290699" duration="1512000" />
+      <workItem from="1766307918715" duration="644000" />
+      <workItem from="1766308574423" duration="1067000" />
     </task>
     <task id="LOCAL-00001" summary="c++ files">
       <option name="closed" value="true" />
@@ -198,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766248497375</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="IsValidArticleLink">
+      <option name="closed" value="true" />
+      <created>1766307801091</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1766307801091</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +237,8 @@
     <MESSAGE value="fix CMakeLists.txt" />
     <MESSAGE value="fixes" />
     <MESSAGE value="ExtractURL Function" />
-    <option name="LAST_COMMIT_MESSAGE" value="ExtractURL Function" />
+    <MESSAGE value="IsValidArticleLink" />
+    <option name="LAST_COMMIT_MESSAGE" value="IsValidArticleLink" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
