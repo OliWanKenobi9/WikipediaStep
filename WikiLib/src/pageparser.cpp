@@ -5,6 +5,10 @@
 
 using namespace std;
 
+static bool IsValidArticleLink(const string url) {
+    
+}
+
 extern "C" {
     EXPORT char** ExtractURL(const char* pageIn) {
         /*
