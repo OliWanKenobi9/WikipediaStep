@@ -7,7 +7,6 @@ using namespace std;
 static bool IsValidArticleLink(const string url) {
     int length = url.length();
 
-    // User:, File:, Help:, Talk: (colon at index 4)
     if ((url[0] == 'U' || url[0] == 'F' || url[0] == 'H' || url[0] == 'T') && length > 4) {
         if (url[4] == ':')
             return false;
@@ -77,8 +76,7 @@ extern "C" {
         int i, j;
 
         for (i = 0; i < length-12; i++) {
-            sub = page.substr(i, 12);
-            if (sub == "href=\"/wiki/") {
+            if (page.compare(i, 12, "href=\"/wiki/") == 0) {
                 j = i+12;
                 url = "";
 
@@ -98,8 +96,8 @@ extern "C" {
             result[h] = (char*)malloc(urls[h].length() + 1);
             strcpy(result[h], urls[h].c_str());
         }
-
         result[urls.size()] = nullptr;
+
         return result;
     }
 }
