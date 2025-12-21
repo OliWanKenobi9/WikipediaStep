@@ -1,7 +1,6 @@
 #include "pageparser.h"
 #include <iostream>
 #include <string>
-#include <cstring>
 
 using namespace std;
 
@@ -54,23 +53,22 @@ static vector<string> RemoveDuplicates(vector<string> url) {
     for (int i = 0; i < url.size(); i++) {
         found = false;
 
-        for (int j = 0; j < url.size(); j++) {
-            for (int h = 0; h < uniqueurls.size(); h++) {
-                if (url[j] == uniqueurls[h])
-                    found = true;
+        for (int h = 0; h < uniqueurls.size(); h++) {
+            if (url[i] == uniqueurls[h]) {
+                found = true;
+                break;
             }
         }
 
-        if (found == false)
+        if (!found)
             uniqueurls.push_back(url[i]);
     }
+
+    return uniqueurls;
 }
 
 extern "C" {
     EXPORT char** ExtractURL(const char* pageIn) {
-        /*
-         * TODO: Add RemoveDuplicates
-         */
         vector<string> urls;
         string page(pageIn), sub, url;
         size_t length = page.length(), h;
@@ -92,6 +90,8 @@ extern "C" {
                     urls.push_back(url);
             }
         }
+
+        urls = RemoveDuplicates(urls);
 
         result = (char**)malloc((urls.size() + 1) * sizeof(char*));
         for (h = 0; h < urls.size(); h++) {

@@ -51,11 +51,10 @@ public class Page
         // Marshal char** into List<string>
         do
         {
-            Marshal.FreeHGlobal(stringPtr); // Free Memory
             stringPtr = Marshal.ReadIntPtr(initResponse, i * IntPtr.Size);
             url = $"https://en.wikipedia.org/wiki/{Marshal.PtrToStringAnsi(stringPtr)}";
-
-
+            Marshal.FreeHGlobal(stringPtr); // Free Memory
+            
             if (url != null) 
             {
                 response.Add(url);
