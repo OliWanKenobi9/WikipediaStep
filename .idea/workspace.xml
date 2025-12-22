@@ -26,12 +26,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="Change ExtractURL to ProcessPageUrl in WikiLib">
-      <change afterPath="$PROJECT_DIR$/WikipediaStep/src/WikiLibAccess.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WikipediaStep.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WikipediaStep.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WikipediaStep/src/Page.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WikipediaStep/src/Page.cs" afterDir="false" />
+    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="Add static class WikiLibAcces.cs, so WikiLib doesnt have to be imported in every instance of Page.cs">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +154,7 @@
       <workItem from="1766319796978" duration="99000" />
       <workItem from="1766329583898" duration="5056000" />
       <workItem from="1766397953552" duration="260000" />
-      <workItem from="1766398313702" duration="2386000" />
+      <workItem from="1766398313702" duration="2777000" />
     </task>
     <task id="LOCAL-00001" summary="c++ files">
       <option name="closed" value="true" />
@@ -272,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766398200040</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add static class WikiLibAcces.cs, so WikiLib doesnt have to be imported in every instance of Page.cs">
+      <option name="closed" value="true" />
+      <created>1766419531917</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1766419531917</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,7 +312,8 @@
     <MESSAGE value="Fixes, .hpp instead of .h" />
     <MESSAGE value="Improve Performance of WikiLib Library" />
     <MESSAGE value="Change ExtractURL to ProcessPageUrl in WikiLib" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change ExtractURL to ProcessPageUrl in WikiLib" />
+    <MESSAGE value="Add static class WikiLibAcces.cs, so WikiLib doesnt have to be imported in every instance of Page.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add static class WikiLibAcces.cs, so WikiLib doesnt have to be imported in every instance of Page.cs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
