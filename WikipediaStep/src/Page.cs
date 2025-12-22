@@ -9,21 +9,6 @@ public class Page
     public List<string> urlList = new List<string>();
     public HttpResponseMessage response;
     private HttpClient client = new HttpClient();
-    [DllImport("libWikiLib.dylib", CallingConvention = CallingConvention.Cdecl)]
-    static extern IntPtr ProcessPageUrl(string pageIn);
-    
-    public List<string> RemoveDuplicates(List<string> origin)
-    {
-        List<string> response = new List<string>();
-        
-        for (int i = 0; i < origin.Count; i++)
-        {
-            if (response.Contains(origin[i]) == false)
-                response.Add(origin[i]);
-        }
-
-        return response;
-    }
     
     // Methods
     public HttpResponseMessage GetResponse(string url)
@@ -42,8 +27,8 @@ public class Page
         int i = 0;
         IntPtr initResponse, stringPtr = new IntPtr();
         // Declarations
-        
-        initResponse = ProcessPageUrl(page);
+
+        initResponse = WikiLibAccess.ProcessPageUrl(page);
 
         if (initResponse == IntPtr.Zero)
             return response;
