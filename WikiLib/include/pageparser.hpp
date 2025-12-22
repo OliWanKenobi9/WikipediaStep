@@ -8,7 +8,7 @@
 #endif
 
 extern "C" {
-    EXPORT char** ExtractURL(const char* page);
+    EXPORT char** ProcessPageUrl(const char* page);
 }
 
 #endif // PAGEPARSER_H

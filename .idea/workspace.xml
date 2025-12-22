@@ -26,10 +26,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="Fixes, .hpp instead of .h">
+    <list default="true" id="fdc51a1b-9a64-4417-8c77-a247a7d4e0c0" name="Changes" comment="Improve Performance of WikiLib Library">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/WikiLib/src/pageparser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WikipediaStep.sln.DotSettings.user" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +143,8 @@
       <workItem from="1766307918715" duration="644000" />
       <workItem from="1766308574423" duration="1684000" />
       <workItem from="1766319796978" duration="99000" />
-      <workItem from="1766329583898" duration="3921000" />
+      <workItem from="1766329583898" duration="5056000" />
+      <workItem from="1766397953552" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="c++ files">
       <option name="closed" value="true" />
@@ -243,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766333695723</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Improve Performance of WikiLib Library">
+      <option name="closed" value="true" />
+      <created>1766334806523</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1766334806523</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +284,8 @@
     <MESSAGE value="Fixes, RemoveDuplicates function in pageparser.cpp" />
     <MESSAGE value="Fixes" />
     <MESSAGE value="Fixes, .hpp instead of .h" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes, .hpp instead of .h" />
+    <MESSAGE value="Improve Performance of WikiLib Library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve Performance of WikiLib Library" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -9,6 +9,8 @@ public class Page
     public List<string> urlList = new List<string>();
     public HttpResponseMessage response;
     private HttpClient client = new HttpClient();
+    [DllImport("libWikiLib.dylib", CallingConvention = CallingConvention.Cdecl)]
+    static extern IntPtr ProcessPageUrl(string pageIn);
     
     public List<string> RemoveDuplicates(List<string> origin)
     {
@@ -35,15 +37,13 @@ public class Page
     }
     public List<string> ExtractURL()
     {
-        [DllImport("libWikiLib.dylib", CallingConvention = CallingConvention.Cdecl)]
-        static extern IntPtr ExtractURL(string pageIn);
         string page = this.response.Content.ReadAsStringAsync().Result, url;
         List<string> response = new List<string>();
         int i = 0;
         IntPtr initResponse, stringPtr = new IntPtr();
         // Declarations
         
-        initResponse = ExtractURL(page);
+        initResponse = ProcessPageUrl(page);
 
         if (initResponse == IntPtr.Zero)
             return response;

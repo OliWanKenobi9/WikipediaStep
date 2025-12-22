@@ -67,7 +67,7 @@ static vector<string> RemoveDuplicates(vector<string> url) {
 }
 
 extern "C" {
-    EXPORT char** ExtractURL(const char* pageIn) {
+    EXPORT char** ProcessPageUrl(const char* pageIn) {
         vector<string> urls;
         string page(pageIn), sub, url;
         size_t length = page.length(), h;
